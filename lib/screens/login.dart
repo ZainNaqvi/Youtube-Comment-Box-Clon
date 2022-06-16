@@ -206,13 +206,44 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: 40,
                     ),
-                    OutlinedButton(
-                      onPressed: () {},
-                      child: Row(
-                        children: [
-                          Text("dsfa"),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              side: BorderSide(
+                                color: Colors.white,
+                              ),
+                              minimumSize: Size(130.w, 48.h)),
+                          onPressed: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child:
+                                SvgPicture.asset("assets/svg/googleButton.svg"),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 17,
+                        ),
+                        OutlinedButton(
+                          style: OutlinedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              side: BorderSide(
+                                color: Colors.white,
+                              ),
+                              minimumSize: Size(130.w, 48.h)),
+                          onPressed: () {},
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: SvgPicture.asset("assets/svg/fbButton.svg"),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
