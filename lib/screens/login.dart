@@ -220,7 +220,7 @@ class _LoginPageState extends State<LoginPage> {
                               minimumSize: Size(130.w, 48.h)),
                           onPressed: () {},
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(0),
                             child:
                                 SvgPicture.asset("assets/svg/googleButton.svg"),
                           ),
@@ -239,7 +239,7 @@ class _LoginPageState extends State<LoginPage> {
                               minimumSize: Size(130.w, 48.h)),
                           onPressed: () {},
                           child: Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.all(0),
                             child: SvgPicture.asset("assets/svg/fbButton.svg"),
                           ),
                         ),
@@ -266,6 +266,9 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                       ],
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                   ],
                 ),
