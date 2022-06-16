@@ -245,6 +245,28 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
+                    SizedBox(
+                      height: 31,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don’t have account?",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {},
+                          child: Text(
+                            "Sign up",
+                            style: TextStyle(color: Colors.yellow[600]),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               )
