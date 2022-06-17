@@ -1,3 +1,4 @@
+import 'package:firebase_flutter_project/routes/routes.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,6 +21,8 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'First Method',
+          initialRoute: LoginScreen.routeName,
+          routes: routes,
           // You can use the library anywhere in the app even in theme
           theme: ThemeData(
             primarySwatch: Colors.teal,

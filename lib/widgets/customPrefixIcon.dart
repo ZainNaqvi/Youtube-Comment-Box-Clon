@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 IntrinsicHeight customPrefixIcon({
   required IconData iconData,
+  required Color iconColor,
 }) {
   return IntrinsicHeight(
     key: UniqueKey(),
@@ -12,7 +13,7 @@ IntrinsicHeight customPrefixIcon({
       ),
       child: Container(
         constraints: BoxConstraints(
-          maxWidth: 45.h,
+          maxWidth: 45.w,
         ),
         width: 45.h,
         child: Row(
@@ -20,9 +21,7 @@ IntrinsicHeight customPrefixIcon({
             Icon(
               iconData,
               size: 20.h,
-              color: Color(0xFFFFFFFF).withOpacity(
-                0.7,
-              ),
+              color: iconColor,
             ),
             SizedBox(
               width: 5,

@@ -1,3 +1,4 @@
+import 'package:firebase_flutter_project/screens/SignUpScreen/signup.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/components/horizontalDIvider.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/components/sociallinks.dart';
 import 'package:firebase_flutter_project/widgets/customOutlineDecoration.dart';
@@ -38,6 +39,9 @@ class _LoginFormState extends State<LoginForm> {
             decoration: InputDecoration(
               prefixIcon: customPrefixIcon(
                 iconData: Icons.email,
+                iconColor: Color(0xFFFFFFFF).withOpacity(
+                  0.7,
+                ),
               ),
               enabledBorder: customOutlineDecoration(),
               border: customOutlineDecoration(),
@@ -72,6 +76,9 @@ class _LoginFormState extends State<LoginForm> {
               ),
               prefixIcon: customPrefixIcon(
                 iconData: Icons.lock,
+                iconColor: Color(0xFFFFFFFF).withOpacity(
+                  0.7,
+                ),
               ),
               enabledBorder: customOutlineDecoration(),
               border: customOutlineDecoration(),
@@ -120,7 +127,10 @@ class _LoginFormState extends State<LoginForm> {
           ),
           defaultButton(
             text: "Sign in",
-            press: () {},
+            press: () {
+              print(_userEmailController.text);
+              print(_userPasswordController.text);
+            },
           ),
           SizedBox(
             height: 20,
@@ -136,7 +146,9 @@ class _LoginFormState extends State<LoginForm> {
           footer(
             text: "Don’t have account?",
             linkText: "Sign up",
-            press: () {},
+            press: () {
+              Navigator.of(context).pushNamed(SignUpScreen.routeName);
+            },
           ),
           SizedBox(
             height: 10,

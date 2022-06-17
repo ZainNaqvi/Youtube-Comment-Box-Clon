@@ -1,3 +1,4 @@
+import 'package:firebase_flutter_project/screens/SignUpScreen/components/body.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -6,9 +7,8 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Sign Up Screen"),
-      ),
+      backgroundColor: Color.fromARGB(255, 57, 124, 136),
+      body: Body(),
     );
   }
 }
