@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 ElevatedButton defaultButton({
   required String text,
+  required Color color,
   required VoidCallback press,
 }) {
   return ElevatedButton(
@@ -15,7 +16,7 @@ ElevatedButton defaultButton({
         fontSize: 16.sp,
       ),
       minimumSize: Size(293.w, 54.h),
-      primary: Color(0xFFF56B3F),
+      primary: color,
     ),
     onPressed: press,
     child: Text(text),

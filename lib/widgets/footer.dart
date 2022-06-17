@@ -4,6 +4,8 @@ Row footer({
   required String text,
   required VoidCallback press,
   required String linkText,
+  required Color color,
+  required Color linkColor,
 }) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -11,15 +13,18 @@ Row footer({
       Text(
         text,
         style: TextStyle(
-          color: Colors.white,
+          color: color,
           fontWeight: FontWeight.w500,
         ),
       ),
-      TextButton(
-        onPressed: press,
+      GestureDetector(
+        onTap: press,
         child: Text(
           linkText,
-          style: TextStyle(color: Colors.yellow[600]),
+          style: TextStyle(
+            color: linkColor,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     ],

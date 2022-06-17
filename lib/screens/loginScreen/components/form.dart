@@ -126,6 +126,7 @@ class _LoginFormState extends State<LoginForm> {
             height: 20,
           ),
           defaultButton(
+            color: Color(0xFFF56B3F),
             text: "Sign in",
             press: () {
               print(_userEmailController.text);
@@ -144,6 +145,8 @@ class _LoginFormState extends State<LoginForm> {
             height: 31,
           ),
           footer(
+            linkColor: Colors.orange,
+            color: Colors.white,
             text: "Don’t have account?",
             linkText: "Sign up",
             press: () {

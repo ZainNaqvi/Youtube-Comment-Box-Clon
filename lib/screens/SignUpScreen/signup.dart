@@ -8,7 +8,7 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 57, 124, 136),
-      body: Body(),
+      body: SingleChildScrollView(child: SafeArea(child: Body())),
     );
   }
 }
