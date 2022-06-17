@@ -19,6 +19,7 @@ class _LoginFormState extends State<LoginForm> {
   TextEditingController _userEmailController = TextEditingController();
   TextEditingController _userPasswordController = TextEditingController();
   bool checkBoxIsSelected = false;
+  bool isobScure = true;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -53,6 +54,7 @@ class _LoginFormState extends State<LoginForm> {
             height: 20,
           ),
           TextFormField(
+            obscureText: isobScure,
             controller: _userPasswordController,
             keyboardType: TextInputType.text,
             textInputAction: TextInputAction.done,
@@ -61,6 +63,11 @@ class _LoginFormState extends State<LoginForm> {
             ),
             decoration: InputDecoration(
               suffixIcon: suffixicon(
+                press: () {
+                  setState(() {
+                    isobScure = !isobScure;
+                  });
+                },
                 icon: Icons.remove_red_eye,
               ),
               prefixIcon: customPrefixIcon(
