@@ -1,9 +1,26 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_flutter_project/routes/routes.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/login.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main() {
+void main() async {
+  // firebase connectivity
+  WidgetsFlutterBinding.ensureInitialized();
+  if (kIsWeb) {
+    await Firebase.initializeApp(
+      options: FirebaseOptions(
+        apiKey: "AIzaSyCs3tDImvGfBLvi3RNxI6ZSQ1-BuUKDFYo",
+        appId: "1:775149077576:web:2ba3adb62898303229847d1",
+        messagingSenderId: "775149077576",
+        projectId: "crud-a91ef",
+      ),
+    );
+  } else {
+    await Firebase.initializeApp();
+  }
+
   runApp(const MyApp());
 }
 

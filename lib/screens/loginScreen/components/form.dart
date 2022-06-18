@@ -55,7 +55,7 @@ class _LoginFormState extends State<LoginForm> {
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 14.h,
           ),
           TextFormField(
             obscureText: isobScure,
@@ -93,7 +93,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
           // Remember me
           SizedBox(
-            height: 20,
+            height: 14.h,
           ),
           Row(
             children: [
@@ -112,7 +112,7 @@ class _LoginFormState extends State<LoginForm> {
                 },
               ),
               SizedBox(
-                width: 5,
+                width: 5.w,
               ),
               Text(
                 "Remember me",
@@ -123,7 +123,7 @@ class _LoginFormState extends State<LoginForm> {
             ],
           ),
           SizedBox(
-            height: 20,
+            height: 14.h,
           ),
           defaultButton(
             color: Color(0xFFF56B3F),
@@ -134,21 +134,21 @@ class _LoginFormState extends State<LoginForm> {
             },
           ),
           SizedBox(
-            height: 20,
+            height: 20.h,
           ),
           horizontalDivider(),
           SizedBox(
-            height: 40,
+            height: 20.h,
           ),
           socialLinkLogin(),
           SizedBox(
-            height: 31,
+            height: 20.h,
           ),
           footer(
             linkColor: Colors.orange,
             color: Colors.white,
             text: "Don’t have account?",
-            linkText: "Sign up",
+            linkText: " Sign up",
             press: () {
               Navigator.of(context).pushNamed(SignUpScreen.routeName);
             },

@@ -1,4 +1,5 @@
 import 'package:firebase_flutter_project/screens/SignUpScreen/components/circleLinks.dart';
+import 'package:firebase_flutter_project/screens/loginScreen/login.dart';
 import 'package:firebase_flutter_project/widgets/defaulButton.dart';
 import 'package:firebase_flutter_project/widgets/footer.dart';
 import 'package:flutter/material.dart';
@@ -17,246 +18,259 @@ class Body extends StatelessWidget {
       padding: EdgeInsets.only(
         top: 99.0.h,
       ),
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Color(0xFFFFFFFF),
-          borderRadius: BorderRadius.vertical(
-            top: Radius.circular(40.r),
+      child: Center(
+        child: Container(
+          constraints: BoxConstraints(
+            maxWidth: 800,
           ),
-        ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: 30.w,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Color(0xFFFFFFFF),
+            borderRadius: BorderRadius.vertical(
+              top: Radius.circular(40.r),
+            ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 20.h,
-              ),
-              Center(
-                child: SizedBox(
-                  width: 20.w,
-                  child: Divider(
-                    thickness: 2,
-                    color: Color(0xFFBEBEBE),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 30.w,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 20.h,
+                ),
+                Center(
+                  child: SizedBox(
+                    width: 20.w,
+                    child: Divider(
+                      thickness: 2,
+                      color: Color(0xFFBEBEBE),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              SvgPicture.asset("assets/svg/logo.svg"),
-              SizedBox(
-                height: 20.h,
-              ),
-              Text(
-                "Getting Started",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 22.sp,
+                SizedBox(
+                  height: 20.h,
                 ),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              Text(
-                "Let’s login for explore continues",
-                style: TextStyle(
-                  color: Color(0xFF969AA8),
-                  fontWeight: FontWeight.w400,
-                  fontSize: 14.sp,
+                Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 50.h,
+                    ),
+                  ],
                 ),
-              ),
-              SizedBox(
-                height: 20.h,
-              ),
-              Row(
-                children: [
-                  circleBoxLinks(
-                    press: () {},
-                    imageURL: "assets/svg/apple.svg",
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  circleBoxLinks(
-                    press: () {},
-                    imageURL: "assets/svg/google.svg",
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  circleBoxLinks(
-                    press: () {},
-                    imageURL: "assets/svg/apple.svg",
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 40.h,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
-                style: TextStyle(
-                  color: Colors.black,
+                SizedBox(
+                  height: 20.h,
                 ),
-                decoration: InputDecoration(
-                  prefixIcon: customPrefixIcon(
-                    iconData: Icons.email_outlined,
-                    iconColor: Colors.black,
+                Text(
+                  "Get Started",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 22.sp,
                   ),
-                  enabledBorder: customOutlineDecoration(),
-                  border: customOutlineDecoration(),
-                  focusedBorder: customOutlineDecoration(),
-                  fillColor: Colors.black.withOpacity(0.04),
-                  filled: true,
-                  hintText: "Enter your email",
-                  hintStyle: TextStyle(
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Text(
+                  "Let’s Get In for explore continues",
+                  style: TextStyle(
+                    color: Color(0xFF969AA8),
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14.sp,
+                  ),
+                ),
+                SizedBox(
+                  height: 20.h,
+                ),
+                Row(
+                  children: [
+                    circleBoxLinks(
+                      press: () {},
+                      imageURL: "assets/svg/apple.svg",
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    circleBoxLinks(
+                      press: () {},
+                      imageURL: "assets/svg/google.svg",
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    circleBoxLinks(
+                      press: () {},
+                      imageURL: "assets/svg/apple.svg",
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 40.h,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
+                  style: TextStyle(
                     color: Colors.black,
                   ),
-                ),
-              ),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: customPrefixIcon(
-                    iconData: Icons.person_outline,
-                    iconColor: Colors.black,
+                  decoration: InputDecoration(
+                    prefixIcon: customPrefixIcon(
+                      iconData: Icons.email_outlined,
+                      iconColor: Colors.black,
+                    ),
+                    enabledBorder: customOutlineDecoration(),
+                    border: customOutlineDecoration(),
+                    focusedBorder: customOutlineDecoration(),
+                    fillColor: Colors.black.withOpacity(0.04),
+                    filled: true,
+                    hintText: "Enter your email",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                  enabledBorder: customOutlineDecoration(),
-                  border: customOutlineDecoration(),
-                  focusedBorder: customOutlineDecoration(),
-                  fillColor: Colors.black.withOpacity(0.04),
-                  filled: true,
-                  hintText: "Full Name",
-                  hintStyle: TextStyle(
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  style: TextStyle(
                     color: Colors.black,
                   ),
-                ),
-              ),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: customPrefixIcon(
-                    iconData: Icons.lock_outline,
-                    iconColor: Colors.black,
+                  decoration: InputDecoration(
+                    prefixIcon: customPrefixIcon(
+                      iconData: Icons.person_outline,
+                      iconColor: Colors.black,
+                    ),
+                    enabledBorder: customOutlineDecoration(),
+                    border: customOutlineDecoration(),
+                    focusedBorder: customOutlineDecoration(),
+                    fillColor: Colors.black.withOpacity(0.04),
+                    filled: true,
+                    hintText: "Full Name",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                  enabledBorder: customOutlineDecoration(),
-                  border: customOutlineDecoration(),
-                  focusedBorder: customOutlineDecoration(),
-                  fillColor: Colors.black.withOpacity(0.04),
-                  filled: true,
-                  hintText: "Password",
-                  hintStyle: TextStyle(
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  style: TextStyle(
                     color: Colors.black,
                   ),
-                ),
-              ),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: customPrefixIcon(
-                    iconData: Icons.lock_outline,
-                    iconColor: Colors.black,
+                  decoration: InputDecoration(
+                    prefixIcon: customPrefixIcon(
+                      iconData: Icons.lock_outline,
+                      iconColor: Colors.black,
+                    ),
+                    enabledBorder: customOutlineDecoration(),
+                    border: customOutlineDecoration(),
+                    focusedBorder: customOutlineDecoration(),
+                    fillColor: Colors.black.withOpacity(0.04),
+                    filled: true,
+                    hintText: "Password",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                  enabledBorder: customOutlineDecoration(),
-                  border: customOutlineDecoration(),
-                  focusedBorder: customOutlineDecoration(),
-                  fillColor: Colors.black.withOpacity(0.04),
-                  filled: true,
-                  hintText: "Confirm Password",
-                  hintStyle: TextStyle(
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  style: TextStyle(
                     color: Colors.black,
                   ),
-                ),
-              ),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: customPrefixIcon(
-                    iconData: Icons.cast_for_education,
-                    iconColor: Colors.black,
+                  decoration: InputDecoration(
+                    prefixIcon: customPrefixIcon(
+                      iconData: Icons.lock_outline,
+                      iconColor: Colors.black,
+                    ),
+                    enabledBorder: customOutlineDecoration(),
+                    border: customOutlineDecoration(),
+                    focusedBorder: customOutlineDecoration(),
+                    fillColor: Colors.black.withOpacity(0.04),
+                    filled: true,
+                    hintText: "Confirm Password",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                  enabledBorder: customOutlineDecoration(),
-                  border: customOutlineDecoration(),
-                  focusedBorder: customOutlineDecoration(),
-                  fillColor: Colors.black.withOpacity(0.04),
-                  filled: true,
-                  hintText: "Campus",
-                  hintStyle: TextStyle(
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  style: TextStyle(
                     color: Colors.black,
                   ),
-                ),
-              ),
-              SizedBox(height: 10),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                style: TextStyle(
-                  color: Colors.black,
-                ),
-                decoration: InputDecoration(
-                  prefixIcon: customPrefixIcon(
-                    iconData: Icons.developer_board,
-                    iconColor: Colors.black,
+                  decoration: InputDecoration(
+                    prefixIcon: customPrefixIcon(
+                      iconData: Icons.cast_for_education,
+                      iconColor: Colors.black,
+                    ),
+                    enabledBorder: customOutlineDecoration(),
+                    border: customOutlineDecoration(),
+                    focusedBorder: customOutlineDecoration(),
+                    fillColor: Colors.black.withOpacity(0.04),
+                    filled: true,
+                    hintText: "Campus",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
                   ),
-                  enabledBorder: customOutlineDecoration(),
-                  border: customOutlineDecoration(),
-                  focusedBorder: customOutlineDecoration(),
-                  fillColor: Colors.black.withOpacity(0.04),
-                  filled: true,
-                  hintText: "Department",
-                  hintStyle: TextStyle(
+                ),
+                SizedBox(height: 10),
+                TextFormField(
+                  keyboardType: TextInputType.text,
+                  textInputAction: TextInputAction.next,
+                  style: TextStyle(
                     color: Colors.black,
                   ),
+                  decoration: InputDecoration(
+                    prefixIcon: customPrefixIcon(
+                      iconData: Icons.developer_board,
+                      iconColor: Colors.black,
+                    ),
+                    enabledBorder: customOutlineDecoration(),
+                    border: customOutlineDecoration(),
+                    focusedBorder: customOutlineDecoration(),
+                    fillColor: Colors.black.withOpacity(0.04),
+                    filled: true,
+                    hintText: "Department",
+                    hintStyle: TextStyle(
+                      color: Colors.black,
+                    ),
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              defaultButton(
-                text: "Sign Up",
-                press: () {},
-                color: Colors.teal,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              footer(
-                linkColor: Colors.teal,
-                text: "Already have an account?",
-                press: () {},
-                linkText: " Sign In",
-                color: Colors.black,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-            ],
+                SizedBox(
+                  height: 10,
+                ),
+                defaultButton(
+                  text: "Sign Up",
+                  press: () {},
+                  color: Colors.teal,
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                footer(
+                  linkColor: Colors.teal,
+                  text: "Already have an account?",
+                  press: () {
+                    Navigator.of(context).pushNamed(LoginScreen.routeName);
+                  },
+                  linkText: " Sign In",
+                  color: Colors.black,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),
