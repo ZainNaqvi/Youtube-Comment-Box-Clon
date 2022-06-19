@@ -1,3 +1,5 @@
+import 'package:firebase_flutter_project/home/home.dart';
+import 'package:firebase_flutter_project/resources/auth.dart';
 import 'package:firebase_flutter_project/screens/SignUpScreen/signup.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/components/horizontalDIvider.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/components/sociallinks.dart';
@@ -6,6 +8,7 @@ import 'package:firebase_flutter_project/widgets/customPrefixIcon.dart';
 import 'package:firebase_flutter_project/widgets/customSuffxIcon.dart';
 import 'package:firebase_flutter_project/widgets/defaulButton.dart';
 import 'package:firebase_flutter_project/widgets/footer.dart';
+import 'package:firebase_flutter_project/widgets/snakeBar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -19,8 +22,40 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   TextEditingController _userEmailController = TextEditingController();
   TextEditingController _userPasswordController = TextEditingController();
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _userEmailController.dispose();
+    _userPasswordController.dispose();
+  }
+
   bool checkBoxIsSelected = false;
   bool isobScure = true;
+  bool loading = false;
+  submitForm() async {
+    setState(() {
+      loading = true;
+    });
+    String res = await AuthMethods().login(
+      email: _userEmailController.text,
+      password: _userPasswordController.text,
+    );
+
+    if (res == "Success") {
+      setState(() {
+        loading = false;
+      });
+      Navigator.pushNamed(context, Home.routeName);
+      showSnakeBar("Login to the class room successfully.", context);
+    } else {
+      setState(() {
+        loading = false;
+      });
+      showSnakeBar(res, context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -125,14 +160,15 @@ class _LoginFormState extends State<LoginForm> {
           SizedBox(
             height: 14.h,
           ),
-          defaultButton(
-            color: Color(0xFFF56B3F),
-            text: "Sign in",
-            press: () {
-              print(_userEmailController.text);
-              print(_userPasswordController.text);
-            },
-          ),
+          loading
+              ? LinearProgressIndicator()
+              : defaultButton(
+                  color: Color(0xFFF56B3F),
+                  text: "Sign in",
+                  press: () {
+                    submitForm();
+                  },
+                ),
           SizedBox(
             height: 20.h,
           ),

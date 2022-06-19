@@ -7,7 +7,7 @@ Widget suffixicon({
   return InkWell(
     onTap: press,
     child: Padding(
-      padding: const EdgeInsets.fromLTRB(0, 20, 20, 20),
+      padding: const EdgeInsets.fromLTRB(0, 10, 20, 10),
       child: Icon(
         icon,
         size: 30,

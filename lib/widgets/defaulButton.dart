@@ -15,7 +15,7 @@ ElevatedButton defaultButton({
         fontWeight: FontWeight.w600,
         fontSize: 16.sp,
       ),
-      minimumSize: Size(293.w, 54.h),
+      minimumSize: Size(293.w, 50.h),
       primary: color,
     ),
     onPressed: press,

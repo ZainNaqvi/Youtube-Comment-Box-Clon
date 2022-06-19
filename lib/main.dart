@@ -1,6 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_flutter_project/home/home.dart';
 import 'package:firebase_flutter_project/routes/routes.dart';
 import 'package:firebase_flutter_project/screens/loginScreen/login.dart';
+import 'package:firebase_flutter_project/widgets/snakeBar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -50,7 +53,24 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: LoginScreen(),
+      child: StreamBuilder(
+        stream: FirebaseAuth.instance.idTokenChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.active) {
+            if (snapshot.hasData) {
+              return Home();
+            } else if (snapshot.hasError) {
+              return showSnakeBar(snapshot.error.toString(), context);
+            }
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+          return LoginScreen();
+        },
+      ),
     );
   }
 }
